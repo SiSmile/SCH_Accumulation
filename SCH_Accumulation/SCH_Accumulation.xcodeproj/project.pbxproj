@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4E5EEB432109A8DC007803D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB422109A8DC007803D6 /* AppDelegate.m */; };
-		4E5EEB462109A8DC007803D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB452109A8DC007803D6 /* ViewController.m */; };
 		4E5EEB492109A8DC007803D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5EEB472109A8DC007803D6 /* Main.storyboard */; };
 		4E5EEB4B2109A8DD007803D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5EEB4A2109A8DD007803D6 /* Assets.xcassets */; };
 		4E5EEB4E2109A8DD007803D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5EEB4C2109A8DD007803D6 /* LaunchScreen.storyboard */; };
 		4E5EEB512109A8DD007803D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB502109A8DD007803D6 /* main.m */; };
 		4E5EEB5B2109A8DE007803D6 /* SCH_AccumulationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB5A2109A8DE007803D6 /* SCH_AccumulationTests.m */; };
 		4E5EEB662109A8DE007803D6 /* SCH_AccumulationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB652109A8DE007803D6 /* SCH_AccumulationUITests.m */; };
+		4E5EEB7A2109AA2B007803D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB762109AA2B007803D6 /* ViewController.m */; };
+		4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB7C2109AA4D007803D6 /* SCHViewCell.m */; };
+		4E5EEB992109B354007803D6 /* SCHThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB952109B354007803D6 /* SCHThreadViewController.m */; };
+		4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */; };
 		9711C67482F35DD63378D90B /* libPods-SCH_AccumulationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6DD46C7891907571AB57F6 /* libPods-SCH_AccumulationTests.a */; };
 		A32A34849DD0D223A40D28D2 /* libPods-SCH_AccumulationUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA956499C27B6CE6EA211A8 /* libPods-SCH_AccumulationUITests.a */; };
 		F3B7A8196BAACE613D353090 /* libPods-SCH_Accumulation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18CC2BD1B7F94FACD4A48D2 /* libPods-SCH_Accumulation.a */; };
@@ -43,8 +46,6 @@
 		4E5EEB3E2109A8DC007803D6 /* SCH_Accumulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCH_Accumulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5EEB412109A8DC007803D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E5EEB422109A8DC007803D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E5EEB442109A8DC007803D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4E5EEB452109A8DC007803D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E5EEB482109A8DC007803D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E5EEB4A2109A8DD007803D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E5EEB4D2109A8DD007803D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +57,15 @@
 		4E5EEB612109A8DE007803D6 /* SCH_AccumulationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCH_AccumulationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5EEB652109A8DE007803D6 /* SCH_AccumulationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCH_AccumulationUITests.m; sourceTree = "<group>"; };
 		4E5EEB672109A8DE007803D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E5EEB762109AA2B007803D6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4E5EEB772109AA2B007803D6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4E5EEB7B2109AA4C007803D6 /* SCHViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHViewCell.h; sourceTree = "<group>"; };
+		4E5EEB7C2109AA4D007803D6 /* SCHViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHViewCell.m; sourceTree = "<group>"; };
+		4E5EEB7E2109ADC4007803D6 /* SCHHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHHeader.pch; sourceTree = "<group>"; };
+		4E5EEB952109B354007803D6 /* SCHThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHThreadViewController.m; sourceTree = "<group>"; };
+		4E5EEB962109B354007803D6 /* SCHThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHThreadViewController.h; sourceTree = "<group>"; };
+		4E5EEB9A2109B375007803D6 /* SCHNSThreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHNSThreadController.h; sourceTree = "<group>"; };
+		4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHNSThreadController.m; sourceTree = "<group>"; };
 		4FA956499C27B6CE6EA211A8 /* libPods-SCH_AccumulationUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SCH_AccumulationUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6443D4DFC0A8815776BCFDB1 /* Pods-SCH_AccumulationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCH_AccumulationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCH_AccumulationTests/Pods-SCH_AccumulationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E55465E1E2532676A5CD1A1 /* Pods-SCH_Accumulation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCH_Accumulation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCH_Accumulation/Pods-SCH_Accumulation.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,14 +151,14 @@
 		4E5EEB402109A8DC007803D6 /* SCH_Accumulation */ = {
 			isa = PBXGroup;
 			children = (
+				4E5EEB732109AA2B007803D6 /* Model */,
 				4E5EEB412109A8DC007803D6 /* AppDelegate.h */,
 				4E5EEB422109A8DC007803D6 /* AppDelegate.m */,
-				4E5EEB442109A8DC007803D6 /* ViewController.h */,
-				4E5EEB452109A8DC007803D6 /* ViewController.m */,
 				4E5EEB472109A8DC007803D6 /* Main.storyboard */,
 				4E5EEB4A2109A8DD007803D6 /* Assets.xcassets */,
 				4E5EEB4C2109A8DD007803D6 /* LaunchScreen.storyboard */,
 				4E5EEB4F2109A8DD007803D6 /* Info.plist */,
+				4E5EEB7E2109ADC4007803D6 /* SCHHeader.pch */,
 				4E5EEB502109A8DD007803D6 /* main.m */,
 			);
 			path = SCH_Accumulation;
@@ -170,6 +180,189 @@
 				4E5EEB672109A8DE007803D6 /* Info.plist */,
 			);
 			path = SCH_AccumulationUITests;
+			sourceTree = "<group>";
+		};
+		4E5EEB732109AA2B007803D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB742109AA2B007803D6 /* Main */,
+				4E5EEB7F2109B049007803D6 /* Thread */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E5EEB742109AA2B007803D6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB752109AA2B007803D6 /* controller */,
+				4E5EEB782109AA2B007803D6 /* model */,
+				4E5EEB792109AA2B007803D6 /* view */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4E5EEB752109AA2B007803D6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB772109AA2B007803D6 /* ViewController.h */,
+				4E5EEB762109AA2B007803D6 /* ViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E5EEB782109AA2B007803D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5EEB792109AA2B007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB7B2109AA4C007803D6 /* SCHViewCell.h */,
+				4E5EEB7C2109AA4D007803D6 /* SCHViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E5EEB7F2109B049007803D6 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB932109B354007803D6 /* Main */,
+				4E5EEB872109B354007803D6 /* GCD */,
+				4E5EEB8B2109B354007803D6 /* NSOperation */,
+				4E5EEB8F2109B354007803D6 /* NSThread */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		4E5EEB872109B354007803D6 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB882109B354007803D6 /* controller */,
+				4E5EEB892109B354007803D6 /* model */,
+				4E5EEB8A2109B354007803D6 /* view */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		4E5EEB882109B354007803D6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E5EEB892109B354007803D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5EEB8A2109B354007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E5EEB8B2109B354007803D6 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB8C2109B354007803D6 /* controller */,
+				4E5EEB8D2109B354007803D6 /* model */,
+				4E5EEB8E2109B354007803D6 /* view */,
+			);
+			path = NSOperation;
+			sourceTree = "<group>";
+		};
+		4E5EEB8C2109B354007803D6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E5EEB8D2109B354007803D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5EEB8E2109B354007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E5EEB8F2109B354007803D6 /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB902109B354007803D6 /* controller */,
+				4E5EEB912109B354007803D6 /* model */,
+				4E5EEB922109B354007803D6 /* view */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
+		4E5EEB902109B354007803D6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB9A2109B375007803D6 /* SCHNSThreadController.h */,
+				4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E5EEB912109B354007803D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5EEB922109B354007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E5EEB932109B354007803D6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB942109B354007803D6 /* controller */,
+				4E5EEB972109B354007803D6 /* model */,
+				4E5EEB982109B354007803D6 /* view */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4E5EEB942109B354007803D6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E5EEB962109B354007803D6 /* SCHThreadViewController.h */,
+				4E5EEB952109B354007803D6 /* SCHThreadViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E5EEB972109B354007803D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E5EEB982109B354007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +436,7 @@
 		4E5EEB362109A8DC007803D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SCH;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = sch;
 				TargetAttributes = {
@@ -313,9 +507,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SCH_Accumulation/Pods-SCH_Accumulation-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -458,8 +655,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E5EEB462109A8DC007803D6 /* ViewController.m in Sources */,
+				4E5EEB992109B354007803D6 /* SCHThreadViewController.m in Sources */,
 				4E5EEB512109A8DD007803D6 /* main.m in Sources */,
+				4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */,
+				4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */,
+				4E5EEB7A2109AA2B007803D6 /* ViewController.m in Sources */,
 				4E5EEB432109A8DC007803D6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,11 +830,18 @@
 			baseConfigurationReference = 357E74D96F20A5EEB4F60056 /* Pods-SCH_Accumulation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SCH_Accumulation/SCHHeader.pch";
 				INFOPLIST_FILE = SCH_Accumulation/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-Accumulation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -644,11 +851,18 @@
 			baseConfigurationReference = 7E55465E1E2532676A5CD1A1 /* Pods-SCH_Accumulation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SCH_Accumulation/SCHHeader.pch";
 				INFOPLIST_FILE = SCH_Accumulation/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-Accumulation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -660,7 +874,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -675,7 +893,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -689,7 +911,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -703,7 +929,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
