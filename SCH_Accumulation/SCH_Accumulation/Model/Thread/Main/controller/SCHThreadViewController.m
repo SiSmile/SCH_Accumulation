@@ -9,6 +9,7 @@
 #import "SCHThreadViewController.h"
 #import "SCHViewCell.h"
 #import "SCHNSThreadController.h"
+#import "SCHCommunicationController.h"
 
 @interface SCHThreadViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
@@ -18,7 +19,7 @@
 @implementation SCHThreadViewController
 - (NSArray *)dataSource{
     if (!_dataSource) {
-        _dataSource = @[@"NSThread",@"GCD"];
+        _dataSource = @[@"NSThread",@"线程之间的通信",@"GCD",@"NSOperation",];
     }
     return _dataSource;
 }
@@ -50,6 +51,9 @@
     switch (indexPath.row) {
         case 0:
             [self.navigationController pushViewController:[[SCHNSThreadController alloc] init] animated:YES];
+            break;
+        case 1:
+            [self.navigationController pushViewController:[[SCHCommunicationController alloc] init] animated:YES];
             break;
             
         default:
