@@ -10,7 +10,7 @@
 #import "SCHViewCell.h"
 #import "SCHNSThreadController.h"
 #import "SCHCommunicationController.h"
-
+#import "SCHGCDViewController.h"
 @interface SCHThreadViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 @property (copy, nonatomic) NSArray *dataSource;
@@ -31,7 +31,6 @@
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
     [_tableView registerClass:[SCHViewCell class] forCellReuseIdentifier:@"SCHViewCell"];
-    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -54,6 +53,9 @@
             break;
         case 1:
             [self.navigationController pushViewController:[[SCHCommunicationController alloc] init] animated:YES];
+            break;
+        case 2:
+            [self.navigationController pushViewController:[[SCHGCDViewController alloc] init] animated:YES];
             break;
             
         default:

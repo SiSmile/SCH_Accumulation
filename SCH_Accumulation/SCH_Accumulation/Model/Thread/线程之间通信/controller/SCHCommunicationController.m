@@ -35,7 +35,6 @@
     UIImage *image = [UIImage imageWithData:data];
     
     /******** 回到主线程 -- 显示图片 *******/
-    
       //方法一
     //[self performSelectorOnMainThread:@selector(showImage:) withObject:image waitUntilDone:YES];
    
@@ -50,6 +49,7 @@
       YES：等@selector方法执行完再往下执行
       NO：直接往下同时进行
       */
+    
 }
 #pragma mark -- 主线程
 - (void)showImage:(UIImage *)image{
@@ -66,14 +66,10 @@
  NSLog(@"%f",[endDate timeIntervalSinceDate:beginDate]);
  
  //方法二
- 
  CFTimeInterval beginTime =  CFAbsoluteTimeGetCurrent();
- 
  //测试代码
- 
  CFTimeInterval endTime = CFAbsoluteTimeGetCurrent();
  
  NSLog(@"%f",endTime - beginTime);
- 
  */
 @end

@@ -20,6 +20,8 @@
 		4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */; };
 		4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB982E9210EB47600130632 /* SCHCommunicationController.m */; };
 		4EB982EC210EB54900130632 /* SCHCommunicationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB982EB210EB54900130632 /* SCHCommunicationController.xib */; };
+		4EB982F0210EC20500130632 /* SCHGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB982EE210EC20500130632 /* SCHGCDViewController.m */; };
+		4EB982F1210EC20500130632 /* SCHGCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB982EF210EC20500130632 /* SCHGCDViewController.xib */; };
 		9711C67482F35DD63378D90B /* libPods-SCH_AccumulationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A6DD46C7891907571AB57F6 /* libPods-SCH_AccumulationTests.a */; };
 		A32A34849DD0D223A40D28D2 /* libPods-SCH_AccumulationUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA956499C27B6CE6EA211A8 /* libPods-SCH_AccumulationUITests.a */; };
 		F3B7A8196BAACE613D353090 /* libPods-SCH_Accumulation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18CC2BD1B7F94FACD4A48D2 /* libPods-SCH_Accumulation.a */; };
@@ -71,6 +73,9 @@
 		4EB982E8210EB47600130632 /* SCHCommunicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHCommunicationController.h; sourceTree = "<group>"; };
 		4EB982E9210EB47600130632 /* SCHCommunicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHCommunicationController.m; sourceTree = "<group>"; };
 		4EB982EB210EB54900130632 /* SCHCommunicationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCHCommunicationController.xib; sourceTree = "<group>"; };
+		4EB982ED210EC20500130632 /* SCHGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHGCDViewController.h; sourceTree = "<group>"; };
+		4EB982EE210EC20500130632 /* SCHGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHGCDViewController.m; sourceTree = "<group>"; };
+		4EB982EF210EC20500130632 /* SCHGCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCHGCDViewController.xib; sourceTree = "<group>"; };
 		4FA956499C27B6CE6EA211A8 /* libPods-SCH_AccumulationUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SCH_AccumulationUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6443D4DFC0A8815776BCFDB1 /* Pods-SCH_AccumulationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCH_AccumulationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCH_AccumulationTests/Pods-SCH_AccumulationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E55465E1E2532676A5CD1A1 /* Pods-SCH_Accumulation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCH_Accumulation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCH_Accumulation/Pods-SCH_Accumulation.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +261,9 @@
 		4E5EEB882109B354007803D6 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4EB982ED210EC20500130632 /* SCHGCDViewController.h */,
+				4EB982EE210EC20500130632 /* SCHGCDViewController.m */,
+				4EB982EF210EC20500130632 /* SCHGCDViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -521,6 +529,7 @@
 				4E5EEB4E2109A8DD007803D6 /* LaunchScreen.storyboard in Resources */,
 				4E5EEB4B2109A8DD007803D6 /* Assets.xcassets in Resources */,
 				4E5EEB492109A8DC007803D6 /* Main.storyboard in Resources */,
+				4EB982F1210EC20500130632 /* SCHGCDViewController.xib in Resources */,
 				4EB982EC210EB54900130632 /* SCHCommunicationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +709,7 @@
 				4E5EEB512109A8DD007803D6 /* main.m in Sources */,
 				4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */,
 				4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */,
+				4EB982F0210EC20500130632 /* SCHGCDViewController.m in Sources */,
 				4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */,
 				4E5EEB7A2109AA2B007803D6 /* ViewController.m in Sources */,
 				4E5EEB432109A8DC007803D6 /* AppDelegate.m in Sources */,
