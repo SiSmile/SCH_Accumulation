@@ -6,6 +6,8 @@ target 'SCH_Accumulation' do
   pod 'SDWebImage', :inhibit_warnings => true
   pod 'MJRefresh', :inhibit_warnings => true
   pod 'Masonry', :inhibit_warnings => true
+  pod 'MBProgressHUD', :inhibit_warnings => true
+  pod 'SVProgressHUD', :inhibit_warnings => true
 
   target 'SCH_AccumulationTests' do
     inherit! :search_paths

@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "SCHViewCell.h"
 #import "SCHThreadViewController.h"
-
+#import "SCHPDFViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 @property (copy, nonatomic) NSArray *dataSource;
@@ -18,7 +18,7 @@
 @implementation ViewController
 - (NSArray *)dataSource{
     if (!_dataSource) {
-        _dataSource = @[@"多线程",@"iPad开发"];
+        _dataSource = @[@"PDF下载查看",@"多线程",@"iPad开发"];
     }
     return _dataSource;
 }
@@ -29,7 +29,6 @@
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
     [_tableView registerClass:[SCHViewCell class] forCellReuseIdentifier:@"SCHViewCell"];
-    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -48,6 +47,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0:
+            [self.navigationController pushViewController:[[SCHPDFViewController alloc] init] animated:YES];
+            break;
+        case 1:
             [self.navigationController pushViewController:[[SCHThreadViewController alloc] init] animated:YES];
             break;
             
