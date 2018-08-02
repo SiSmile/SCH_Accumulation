@@ -9,6 +9,7 @@
 #import "SCHGCDViewController.h"
 
 @interface SCHGCDViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
+#pragma MARK -- GCD的各种队列
+- (IBAction)gcdQueue:(id)sender {
     //1.异步函数 + 并发队列
     [self asyncConcurrent];
     
@@ -37,6 +38,41 @@
     //6.同步函数 + 主队列
     //[self syncMain];
 }
+#pragma MARK -- GCD间的通信
+- (IBAction)gcdCommunication:(id)sender {
+   //1.开启新线程，用的全局并行队列
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //图片的网络路径
+        NSURL *url = [NSURL URLWithString:@"http://img.pconline.com.cn/images/photoblog/9/9/8/1/9981681/200910/11/1255259355826.jpg"];
+        //根据图片的网络路径下载图片
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        //生成图片
+        UIImage *image = [UIImage imageWithData:data];
+        
+        //2.回到主线程刷新UI
+         /******** 2_1.（用的是异步函数，但是是主队列） ******/
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"------end2------");
+            self.imageView.image = image;
+        });
+         
+         /******** 2_2.（用的是异步函数，主队列） ******/
+        /*
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"------end2------");
+            self.imageView.image = image;
+        });
+         */
+        NSLog(@"------end1------");
+        /*
+          2_1和2_2 的区别在end1 和 end2的执行顺序
+            打印顺序：
+                    2_1是 end1-》end2
+                    2_2是 end2-》end1
+         */
+    });
+}
+
 /**
  同步函数 + 主队列：发生阻塞
  */
@@ -88,10 +124,15 @@
     dispatch_async(queue, ^{
         NSLog(@"3 -----  %@",[NSThread currentThread]);
     });
+    
+    NSLog(@"end -- %@",[NSThread currentThread]);
     /* async具有开启新线程能力，但是是在dispatch_get_main_queue主队列中，主队列又在主线程中，所以任务会在主线程执行
      2018-07-31 10:49:56.819458+0800 SCH_Accumulation[7737:475811] 1 -----  <NSThread: 0x604000077040>{number = 1, name = main}
      2018-07-31 10:49:56.819717+0800 SCH_Accumulation[7737:475811] 2 -----  <NSThread: 0x604000077040>{number = 1, name = main}
      2018-07-31 10:49:56.819854+0800 SCH_Accumulation[7737:475811] 3 -----  <NSThread: 0x604000077040>{number = 1, name = main}
+     */
+    /*
+     执行顺序：end-->1-->2-->3
      */
 }
 /**
@@ -110,10 +151,15 @@
     dispatch_sync(queue, ^{
         NSLog(@"3 -----  %@",[NSThread currentThread]);
     });
+    
+    NSLog(@"end -- %@",[NSThread currentThread]);
     /*主线程 顺序执行
      2018-07-31 10:43:06.313086+0800 SCH_Accumulation[7611:469721] 1 -----  <NSThread: 0x600000079400>{number = 1, name = main}
      2018-07-31 10:43:06.313368+0800 SCH_Accumulation[7611:469721] 2 -----  <NSThread: 0x600000079400>{number = 1, name = main}
      2018-07-31 10:43:06.313503+0800 SCH_Accumulation[7611:469721] 3 -----  <NSThread: 0x600000079400>{number = 1, name = main}
+     */
+    /*
+     执行顺序：1-->2-->3-->end
      */
 }
 /**
@@ -132,12 +178,20 @@
     dispatch_async(queue, ^{
         NSLog(@"3 -----  %@",[NSThread currentThread]);
     });
+    
+    NSLog(@"end -- %@",[NSThread currentThread]);
     /* 只开了一条线程，因为异步会开启新线程，但任务是串行，执行问一个在执行下一个
-     2018-07-31 10:39:43.038044+0800 SCH_Accumulation[7536:466335] 1 -----  <NSThread: 0x60000047ae80>{number = 3, name = (null)}
-     2018-07-31 10:39:43.038250+0800 SCH_Accumulation[7536:466335] 2 -----  <NSThread: 0x60000047ae80>{number = 3, name = (null)}
-     2018-07-31 10:39:43.038788+0800 SCH_Accumulation[7536:466335] 3 -----  <NSThread: 0x60000047ae80>{number = 3, name = (null)}
+     2018-08-02 15:51:55.693282+0800 SCH_Accumulation[3405:179448] end -- <NSThread: 0x600000065300>{number = 1, name = main}
+     2018-08-02 15:51:55.693282+0800 SCH_Accumulation[3405:179507] 1 -----  <NSThread: 0x600000279d40>{number = 3, name = (null)}
+     2018-08-02 15:51:55.693738+0800 SCH_Accumulation[3405:179507] 2 -----  <NSThread: 0x600000279d40>{number = 3, name = (null)}
+     2018-08-02 15:51:55.694221+0800 SCH_Accumulation[3405:179507] 3 -----  <NSThread: 0x600000279d40>{number = 3, name = (null)}
+
 
      */
+    /*
+     执行顺序：end-->1-->2-->3
+     */
+    
 }
 /**
  同步函数 + 并发队列：因为当前线程在主线程 又因为dispatch_sync在当前线程执行，所以在主线程执行，同步不会开启新线程
@@ -155,10 +209,17 @@
     dispatch_sync(queue, ^{
         NSLog(@"3 -----  %@",[NSThread currentThread]);
     });
+    
+    NSLog(@"end -- %@",[NSThread currentThread]);
     /*
-     2018-07-31 10:36:13.653765+0800 SCH_Accumulation[7463:462963] 1 -----  <NSThread: 0x604000063e00>{number = 1, name = main}
-     2018-07-31 10:36:13.654044+0800 SCH_Accumulation[7463:462963] 2 -----  <NSThread: 0x604000063e00>{number = 1, name = main}
-     2018-07-31 10:36:13.654166+0800 SCH_Accumulation[7463:462963] 3 -----  <NSThread: 0x604000063e00>{number = 1, name = main}
+     2018-08-02 15:48:35.390797+0800 SCH_Accumulation[3346:176604] 1 -----  <NSThread: 0x60400007ec80>{number = 1, name = main}
+     2018-08-02 15:48:35.391324+0800 SCH_Accumulation[3346:176604] 2 -----  <NSThread: 0x60400007ec80>{number = 1, name = main}
+     2018-08-02 15:48:35.391691+0800 SCH_Accumulation[3346:176604] 3 -----  <NSThread: 0x60400007ec80>{number = 1, name = main}
+     2018-08-02 15:48:35.391982+0800 SCH_Accumulation[3346:176604] end -- <NSThread: 0x60400007ec80>{number = 1, name = main}
+
+     */
+    /*
+     打印顺序： 1 --》2 --》3--》end
      */
 }
 /**
@@ -190,16 +251,20 @@
         for (int i=0; i<10; i++) {
             NSLog(@"3 -----  %@",[NSThread currentThread]);
         }
+        
     });
-    /* 可以看出开启新线程 同时执行任务
-     2018-07-31 10:06:53.785045+0800 SCH_Accumulation[7102:439771] 2 -----  <NSThread: 0x60400066ad00>{number = 4, name = (null)}
-     2018-07-31 10:06:53.785045+0800 SCH_Accumulation[7102:439770] 1 -----  <NSThread: 0x6000004684c0>{number = 3, name = (null)}
-     2018-07-31 10:06:53.785086+0800 SCH_Accumulation[7102:439766] 3 -----  <NSThread: 0x60400066a780>{number = 5, name = (null)}
-     2018-07-31 10:06:53.785268+0800 SCH_Accumulation[7102:439771] 2 -----  <NSThread: 0x60400066ad00>{number = 4, name = (null)}
-     2018-07-31 10:06:53.785724+0800 SCH_Accumulation[7102:439770] 1 -----  <NSThread: 0x6000004684c0>{number = 3, name = (null)}
-     2018-07-31 10:06:53.785794+0800 SCH_Accumulation[7102:439766] 3 -----  <NSThread: 0x60400066a780>{number = 5, name = (null)}
-     2018-07-31 10:06:53.786072+0800 SCH_Accumulation[7102:439770] 1 -----  <NSThread: 0x6000004684c0>{number = 3, name = (null)}
-     2018-07-31 10:06:53.786120+0800 SCH_Accumulation[7102:439771] 2 -----  <NSThread: 0x60400066ad00>{number = 4, name = (null)}
+
+    NSLog(@"end -- %@",[NSThread currentThread]);
+    
+    /* 可以看出开启新线程
+     2018-08-02 15:45:51.933435+0800 SCH_Accumulation[3310:174116] end -- <NSThread: 0x60400006a780>{number = 1, name = main}
+     2018-08-02 15:45:51.933510+0800 SCH_Accumulation[3310:174173] 1 -----  <NSThread: 0x604000275a00>{number = 3, name = (null)}
+     2018-08-02 15:45:51.933556+0800 SCH_Accumulation[3310:174178] 2 -----  <NSThread: 0x6040002759c0>{number = 4, name = (null)}
+     2018-08-02 15:45:51.933592+0800 SCH_Accumulation[3310:174172] 3 -----  <NSThread: 0x604000275100>{number = 5, name = (null)}
+
+     */
+    /*
+     打印顺序 end --》（1.2.3顺序不定）
      */
 }
 @end
