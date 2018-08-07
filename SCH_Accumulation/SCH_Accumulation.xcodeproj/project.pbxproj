@@ -18,6 +18,7 @@
 		4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB7C2109AA4D007803D6 /* SCHViewCell.m */; };
 		4E5EEB992109B354007803D6 /* SCHThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB952109B354007803D6 /* SCHThreadViewController.m */; };
 		4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */; };
+		4E66A4CE2119894300B2C8B8 /* SCHSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */; };
 		4E72520721119298001BCAA6 /* SCHPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E72520621119298001BCAA6 /* SCHPDFViewController.m */; };
 		4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB982E9210EB47600130632 /* SCHCommunicationController.m */; };
 		4EB982EC210EB54900130632 /* SCHCommunicationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB982EB210EB54900130632 /* SCHCommunicationController.xib */; };
@@ -71,6 +72,8 @@
 		4E5EEB962109B354007803D6 /* SCHThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHThreadViewController.h; sourceTree = "<group>"; };
 		4E5EEB9A2109B375007803D6 /* SCHNSThreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHNSThreadController.h; sourceTree = "<group>"; };
 		4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHNSThreadController.m; sourceTree = "<group>"; };
+		4E66A4CC2119894300B2C8B8 /* SCHSingleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHSingleViewController.h; sourceTree = "<group>"; };
+		4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHSingleViewController.m; sourceTree = "<group>"; };
 		4E72520521119298001BCAA6 /* SCHPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHPDFViewController.h; sourceTree = "<group>"; };
 		4E72520621119298001BCAA6 /* SCHPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHPDFViewController.m; sourceTree = "<group>"; };
 		4EB982E8210EB47600130632 /* SCHCommunicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHCommunicationController.h; sourceTree = "<group>"; };
@@ -244,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5EEB932109B354007803D6 /* Main */,
+				4E66A4C8211988F200B2C8B8 /* GCD的代理模式 */,
 				4EB982E4210EB45500130632 /* 线程之间通信 */,
 				4E5EEB872109B354007803D6 /* GCD */,
 				4E5EEB8B2109B354007803D6 /* NSOperation */,
@@ -377,6 +381,39 @@
 			sourceTree = "<group>";
 		};
 		4E5EEB982109B354007803D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E66A4C8211988F200B2C8B8 /* GCD的代理模式 */ = {
+			isa = PBXGroup;
+			children = (
+				4E66A4C9211988F200B2C8B8 /* controller */,
+				4E66A4CA211988F200B2C8B8 /* model */,
+				4E66A4CB211988F200B2C8B8 /* view */,
+			);
+			path = "GCD的代理模式";
+			sourceTree = "<group>";
+		};
+		4E66A4C9211988F200B2C8B8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E66A4CC2119894300B2C8B8 /* SCHSingleViewController.h */,
+				4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4E66A4CA211988F200B2C8B8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E66A4CB211988F200B2C8B8 /* view */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -729,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5EEB992109B354007803D6 /* SCHThreadViewController.m in Sources */,
+				4E66A4CE2119894300B2C8B8 /* SCHSingleViewController.m in Sources */,
 				4E5EEB512109A8DD007803D6 /* main.m in Sources */,
 				4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */,
 				4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */,
@@ -911,7 +949,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SCH_Accumulation/SCHHeader.pch";
 				INFOPLIST_FILE = SCH_Accumulation/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-Accumulation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -929,7 +970,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SCH_Accumulation/SCHHeader.pch";
 				INFOPLIST_FILE = SCH_Accumulation/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-Accumulation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -944,7 +988,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -959,7 +1007,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -973,7 +1025,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -987,7 +1043,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCH_AccumulationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sch.SCH-AccumulationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

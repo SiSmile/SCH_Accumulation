@@ -7,7 +7,7 @@
 //
 
 #import "SCHGCDViewController.h"
-
+#import "SCHSingleViewController.h"
 @interface SCHGCDViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageGroup;
@@ -20,7 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 }
+#pragma mark -- 代理模式
+- (IBAction)single:(id)sender {
+    SCHSingleViewController *single1 = [[SCHSingleViewController alloc] init];
+    single1.name = @"sch";
+    SCHSingleViewController *single2 = [[SCHSingleViewController alloc] init];
+    SCHSingleViewController *single3 = [[SCHSingleViewController alloc] init];
+    NSLog(@"single1=%p,single2=%p,single3=%p",single1,single2,single3);
+    NSLog(@"single3.name=%@",single3.name);
+    NSLog(@"single11=%p,single12=%p",[SCHSingleViewController shareSingle],[SCHSingleViewController shareSingle]);
+    
+}
+
 #pragma mark---快速迭代代码
 - (IBAction)dispatch_apply:(id)sender {
     /*

@@ -22,16 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqy-Le-Oj3">
-                    <rect key="frame" x="73" y="89" width="177" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.64113994433752008" green="0.7504655116580311" blue="0.68710953840334432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="GCD的各种队列">
-                        <color key="titleColor" red="1" green="0.18330179992648976" blue="0.3531831427347023" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haM-lX-zMm">
-                    <rect key="frame" x="73" y="89" width="177" height="40"/>
+                    <rect key="frame" x="73" y="64" width="177" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="GCD的各种队列">
@@ -42,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-Lq-o6z">
-                    <rect key="frame" x="73" y="404" width="177" height="40"/>
+                    <rect key="frame" x="73" y="333" width="177" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="GCD的快速迭代">
@@ -53,7 +45,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYe-wb-bJG">
-                    <rect key="frame" x="73" y="185" width="177" height="40"/>
+                    <rect key="frame" x="73" y="124" width="177" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="GCD间的各种通信">
@@ -64,16 +56,12 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yih-RA-AXJ">
-                    <rect key="frame" x="73" y="226" width="177" height="117"/>
+                    <rect key="frame" x="73" y="166" width="177" height="117"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUE-to-I2b">
-                    <rect key="frame" x="73" y="519" width="177" height="117"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-5z-uae">
-                    <rect key="frame" x="73" y="478" width="177" height="40"/>
+                    <rect key="frame" x="73" y="390" width="177" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="GCD的队列组">
@@ -81,6 +69,21 @@
                     </state>
                     <connections>
                         <action selector="dispatch_group:" destination="-1" eventType="touchUpInside" id="lYT-np-Vvv"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUE-to-I2b">
+                    <rect key="frame" x="73" y="432" width="177" height="117"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYF-VE-F9g">
+                    <rect key="frame" x="73" y="578" width="177" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="GCD的单例模式">
+                        <color key="titleColor" red="1" green="0.18330179990000001" blue="0.35318314270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="single:" destination="-1" eventType="touchUpInside" id="7Ee-r8-zlx"/>
                     </connections>
                 </button>
             </subviews>
