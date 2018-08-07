@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SCHGCDViewController">
             <connections>
+                <outlet property="imageGroup" destination="lUE-to-I2b" id="mqR-gH-Re5"/>
                 <outlet property="imageView" destination="yih-RA-AXJ" id="kCD-hl-Jhm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,6 +41,17 @@
                         <action selector="gcdQueue:" destination="-1" eventType="touchUpInside" id="tZu-G8-QOy"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-Lq-o6z">
+                    <rect key="frame" x="73" y="404" width="177" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="GCD的快速迭代">
+                        <color key="titleColor" red="1" green="0.18330179990000001" blue="0.35318314270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="dispatch_apply:" destination="-1" eventType="touchUpInside" id="tpb-Pz-qrx"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYe-wb-bJG">
                     <rect key="frame" x="73" y="185" width="177" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,6 +68,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUE-to-I2b">
+                    <rect key="frame" x="73" y="519" width="177" height="117"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-5z-uae">
+                    <rect key="frame" x="73" y="478" width="177" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.64113994429999999" green="0.75046551169999998" blue="0.6871095384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="GCD的队列组">
+                        <color key="titleColor" red="1" green="0.18330179990000001" blue="0.35318314270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="dispatch_group:" destination="-1" eventType="touchUpInside" id="lYT-np-Vvv"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

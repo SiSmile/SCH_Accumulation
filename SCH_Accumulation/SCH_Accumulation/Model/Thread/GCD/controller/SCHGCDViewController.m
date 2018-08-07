@@ -10,6 +10,9 @@
 
 @interface SCHGCDViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageGroup;
+@property (strong, nonatomic) UIImage *imageGroup1;
+@property (strong, nonatomic) UIImage *imageGroup2;
 
 @end
 
@@ -17,6 +20,79 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+#pragma mark---快速迭代代码
+- (IBAction)dispatch_apply:(id)sender {
+    /*
+     需求将（测试）fromPath=/Users/sch/Desktop/sch/study-ios/05-多线程/0708GCD单例模式/0708GCD单例模式/资料
+     路径下的图片移到 toPath=/Users/sch/Desktop/sch/study-ios/05-多线程/0708GCD单例模式/0708GCD单例模式/资料2
+     */
+    
+    NSString *fromPath = @"/Users/sch/Desktop/sch/study-ios/05-多线程/0708GCD单例模式/0708GCD单例模式/资料";
+    NSString *toPath = @"/Users/sch/Desktop/sch/study-ios/05-多线程/0708GCD单例模式/0708GCD单例模式/资料2";
+    
+    //1.创建文件管理对象
+    NSFileManager *manager = [NSFileManager defaultManager];
+    //2.根据路径获取文件夹下的所有文件
+    NSArray *imageArray = [manager contentsOfDirectoryAtPath:fromPath error:nil];
+    NSLog(@"imageArray___%@",imageArray);
+    //3.快速迭代（用的是并发）
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_apply(imageArray.count, queue, ^(size_t index) {
+        //4.获取每个文件的整体路径
+        NSString *oPath = imageArray[index];
+        NSString *fromFullPath = [fromPath stringByAppendingPathComponent:oPath];
+        NSLog(@"fromFullPath__%@",fromFullPath);
+        
+        NSString *toFullPath = [toPath stringByAppendingPathComponent:oPath];
+        NSLog(@"toFullPath__%@",toFullPath);
+        
+        //5.从fromPath移动到toPath
+        [manager moveItemAtPath:fromFullPath toPath:toFullPath error:nil];
+    });
+    
+    /*
+     dispatch_apply对比的for循环的好处：
+       dispatch_apply 耗时非常短 在使用异步队列的时候会开启子线程，不会堵塞主线程
+     */
+    
+}
+#pragma mark -- 队列组
+- (IBAction)dispatch_group:(id)sender {
+    /*
+     需求 分别下载两张图片，下载完成后将两张合成一张图片
+     */
+    //1.下载第一张图片
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, queue, ^{
+        NSURL *url = [NSURL URLWithString:@"http://img.pconline.com.cn/images/photoblog/9/9/8/1/9981681/200910/11/1255259355826.jpg"];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        self.imageGroup1 = [UIImage imageWithData:data];
+    });
+    //2.下载第二张图片
+    dispatch_group_async(group, queue, ^{
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533633094832&di=66712561e3e59c1d3a35e35746d514f0&imgtype=0&src=http%3A%2F%2Fi5.hexunimg.cn%2F2013-06-25%2F155504368.jpg"];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        self.imageGroup2 = [UIImage imageWithData:data];
+    });
+    //3.全部下载完
+    dispatch_group_notify(group, queue, ^{
+        //获得上下文
+        UIGraphicsBeginImageContext(CGSizeMake(100, 100));
+        [self.imageGroup1 drawInRect:CGRectMake(0, 0, 50, 100)];
+        [self.imageGroup2 drawInRect:CGRectMake(50,0,50,100)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        //关闭上下文
+        UIGraphicsEndImageContext();
+        //回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageGroup.image = resultingImage;
+        });
+        
+    });
+    
+    
 }
 #pragma MARK -- GCD的各种队列
 - (IBAction)gcdQueue:(id)sender {
