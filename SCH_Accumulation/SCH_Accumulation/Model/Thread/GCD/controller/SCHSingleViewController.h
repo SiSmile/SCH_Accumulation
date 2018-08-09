@@ -10,5 +10,5 @@
 
 @interface SCHSingleViewController : UIViewController
 @property (strong, nonatomic) NSString *name;
-+(instancetype)shareSingle;
+SCHSingletonH(SCHSingleViewController)
 @end

@@ -31,7 +31,7 @@
     SCHSingleViewController *single3 = [[SCHSingleViewController alloc] init];
     NSLog(@"single1=%p,single2=%p,single3=%p",single1,single2,single3);
     NSLog(@"single3.name=%@",single3.name);
-    NSLog(@"single11=%p,single12=%p",[SCHSingleViewController shareSingle],[SCHSingleViewController shareSingle]);
+    NSLog(@"single11=%p,single12=%p",[SCHSingleViewController shareSCHSingleViewController],[[SCHSingleViewController alloc]init]);
     
 }
 

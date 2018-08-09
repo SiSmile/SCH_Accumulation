@@ -20,6 +20,8 @@
 		4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EEB9B2109B375007803D6 /* SCHNSThreadController.m */; };
 		4E66A4CE2119894300B2C8B8 /* SCHSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */; };
 		4E72520721119298001BCAA6 /* SCHPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E72520621119298001BCAA6 /* SCHPDFViewController.m */; };
+		4E74AE0F211C16E300E34210 /* SCHNSOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E74AE0E211C16E300E34210 /* SCHNSOperationController.m */; };
+		4E74AE12211C1B8E00E34210 /* SCHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E74AE11211C1B8E00E34210 /* SCHOperation.m */; };
 		4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB982E9210EB47600130632 /* SCHCommunicationController.m */; };
 		4EB982EC210EB54900130632 /* SCHCommunicationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB982EB210EB54900130632 /* SCHCommunicationController.xib */; };
 		4EB982F0210EC20500130632 /* SCHGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB982EE210EC20500130632 /* SCHGCDViewController.m */; };
@@ -76,6 +78,10 @@
 		4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHSingleViewController.m; sourceTree = "<group>"; };
 		4E72520521119298001BCAA6 /* SCHPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHPDFViewController.h; sourceTree = "<group>"; };
 		4E72520621119298001BCAA6 /* SCHPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHPDFViewController.m; sourceTree = "<group>"; };
+		4E74AE0D211C16E300E34210 /* SCHNSOperationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHNSOperationController.h; sourceTree = "<group>"; };
+		4E74AE0E211C16E300E34210 /* SCHNSOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHNSOperationController.m; sourceTree = "<group>"; };
+		4E74AE10211C1B8E00E34210 /* SCHOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHOperation.h; sourceTree = "<group>"; };
+		4E74AE11211C1B8E00E34210 /* SCHOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHOperation.m; sourceTree = "<group>"; };
 		4EB982E8210EB47600130632 /* SCHCommunicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCHCommunicationController.h; sourceTree = "<group>"; };
 		4EB982E9210EB47600130632 /* SCHCommunicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCHCommunicationController.m; sourceTree = "<group>"; };
 		4EB982EB210EB54900130632 /* SCHCommunicationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCHCommunicationController.xib; sourceTree = "<group>"; };
@@ -247,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				4E5EEB932109B354007803D6 /* Main */,
-				4E66A4C8211988F200B2C8B8 /* GCD的代理模式 */,
 				4EB982E4210EB45500130632 /* 线程之间通信 */,
 				4E5EEB872109B354007803D6 /* GCD */,
 				4E5EEB8B2109B354007803D6 /* NSOperation */,
@@ -269,6 +274,8 @@
 		4E5EEB882109B354007803D6 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E66A4CC2119894300B2C8B8 /* SCHSingleViewController.h */,
+				4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */,
 				4EB982ED210EC20500130632 /* SCHGCDViewController.h */,
 				4EB982EE210EC20500130632 /* SCHGCDViewController.m */,
 				4EB982EF210EC20500130632 /* SCHGCDViewController.xib */,
@@ -303,6 +310,8 @@
 		4E5EEB8C2109B354007803D6 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E74AE0D211C16E300E34210 /* SCHNSOperationController.h */,
+				4E74AE0E211C16E300E34210 /* SCHNSOperationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -317,6 +326,8 @@
 		4E5EEB8E2109B354007803D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4E74AE10211C1B8E00E34210 /* SCHOperation.h */,
+				4E74AE11211C1B8E00E34210 /* SCHOperation.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -381,39 +392,6 @@
 			sourceTree = "<group>";
 		};
 		4E5EEB982109B354007803D6 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		4E66A4C8211988F200B2C8B8 /* GCD的代理模式 */ = {
-			isa = PBXGroup;
-			children = (
-				4E66A4C9211988F200B2C8B8 /* controller */,
-				4E66A4CA211988F200B2C8B8 /* model */,
-				4E66A4CB211988F200B2C8B8 /* view */,
-			);
-			path = "GCD的代理模式";
-			sourceTree = "<group>";
-		};
-		4E66A4C9211988F200B2C8B8 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				4E66A4CC2119894300B2C8B8 /* SCHSingleViewController.h */,
-				4E66A4CD2119894300B2C8B8 /* SCHSingleViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		4E66A4CA211988F200B2C8B8 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		4E66A4CB211988F200B2C8B8 /* view */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -771,7 +749,9 @@
 				4EB982EA210EB47600130632 /* SCHCommunicationController.m in Sources */,
 				4E5EEB7D2109AA4D007803D6 /* SCHViewCell.m in Sources */,
 				4EB982F0210EC20500130632 /* SCHGCDViewController.m in Sources */,
+				4E74AE0F211C16E300E34210 /* SCHNSOperationController.m in Sources */,
 				4E5EEB9C2109B375007803D6 /* SCHNSThreadController.m in Sources */,
+				4E74AE12211C1B8E00E34210 /* SCHOperation.m in Sources */,
 				4E5EEB7A2109AA2B007803D6 /* ViewController.m in Sources */,
 				4E72520721119298001BCAA6 /* SCHPDFViewController.m in Sources */,
 				4E5EEB432109A8DC007803D6 /* AppDelegate.m in Sources */,

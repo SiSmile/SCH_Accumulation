@@ -21,4 +21,29 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
+
+//单例模式的宏
+//.h文件
+#define SCHSingletonH(name)  +(instancetype)share##name;
+//.m文件
+#define SCHSingletonM(name) \
+static id _schIntance = nil;\
++(instancetype)allocWithZone:(struct _NSZone *)zone{\
+    static dispatch_once_t onceToken;\
+    dispatch_once(&onceToken, ^{\
+        _schIntance = [super allocWithZone:zone];\
+    });\
+    return _schIntance;\
+}\
+- (id)copyWithZone:(NSZone *)zone{\
+    return _schIntance;\
+}\
++(instancetype)share##name{\
+    static dispatch_once_t onceToken;\
+    dispatch_once(&onceToken, ^{\
+        _schIntance = [[super alloc]init];\
+    });\
+    return _schIntance;\
+}
+
 #endif /* SCHHeader_pch */

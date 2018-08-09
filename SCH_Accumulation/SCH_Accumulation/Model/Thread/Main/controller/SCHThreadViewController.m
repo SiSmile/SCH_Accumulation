@@ -12,6 +12,7 @@
 #import "SCHCommunicationController.h"
 #import "SCHGCDViewController.h"
 #import "SCHSingleViewController.h"
+#import "SCHNSOperationController.h"
 @interface SCHThreadViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 @property (copy, nonatomic) NSArray *dataSource;
@@ -20,7 +21,7 @@
 @implementation SCHThreadViewController
 - (NSArray *)dataSource{
     if (!_dataSource) {
-        _dataSource = @[@"NSThread",@"线程之间的通信",@"GCD",@"GCD的单例模式",@"NSOperation",];
+        _dataSource = @[@"NSThread",@"线程之间的通信",@"GCD",@"GCD的单例模式",@"NSOperation的基本使用",];
     }
     return _dataSource;
 }
@@ -60,6 +61,9 @@
             break;
         case 3:
             [self.navigationController pushViewController:[[SCHSingleViewController alloc] init] animated:YES];
+            break;
+        case 4:
+            [self.navigationController pushViewController:[[SCHNSOperationController alloc] init] animated:YES];
             break;
             
         default:
